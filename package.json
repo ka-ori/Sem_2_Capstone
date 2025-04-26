@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
-  "build": "next build",
-  "start": "next start"
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/ka-ori/Sem_2_Capstone/issues"
   },
-  "homepage": "https://github.com/ka-ori/Sem_2_Capstone#readme"
+  "homepage": "https://github.com/ka-ori/Sem_2_Capstone#readme",
+  "dependencies": {
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
 }
