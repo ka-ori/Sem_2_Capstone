@@ -1,0 +1,135 @@
+.DonationCard{
+    margin-top: 50px;
+    width:100vw;
+    position: relative;
+    box-sizing: border-box;
+
+    
+
+
+}
+.DonationCardDescription{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width : 50%;
+    margin-left: 20px;
+
+}
+.Connect{
+    font-size: 49.76px;
+    font-weight: bold;
+
+}
+.Discover{
+    font-size: 27.64px;
+    font-weight: 500;
+}
+.DonationCard img{
+    filter : brightness(40%);
+    width: 100%;
+    height: auto;
+}
+
+.DonationAmountCard {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+}
+
+
+.DonationAmounts{
+    display: flex;
+    justify-content: space-evenly;
+    flex : 1;
+    margin-bottom : 20px;
+
+}
+
+.DonationAmounts button{
+    border : 1px solid #E2E8F0;
+    width : 33%;
+    background-color: white;
+    color:black;
+    height : 40px;
+    margin : 0px 3px;
+    border-radius: 7px;
+    cursor: pointer;
+
+}
+.DonationAmounts button:hover{
+    background-color: #5425DE;
+    color: white;
+}
+.UserInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex:auto;
+    padding : 10px;
+    gap  :15px;
+    background: white;
+    color : black
+
+}
+.UserInformation input,
+.UserInformation textarea,
+.UserInformation button {
+    background-color: white; 
+    color: black; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 12px 15px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.UserInformation button:hover{
+    background-color: #5425DE;
+    color: white;
+}
+.UserInformation button{
+    cursor: pointer;
+    border-radius: 33px;
+}
+.UserInformation textarea{
+    resize: none;
+    height: 150px;
+}
+@media (max-width: 768px) {
+    .DonationCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5425DE;
+    }
+
+    .DonationCardDescription {
+        position: relative;
+        top: auto;
+        transform: none;
+        width: 90%;
+        margin: 20px 0;
+        text-align: center;
+        color: white; 
+        z-index: 2;
+    }
+
+    .DonationAmountCard {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+}
