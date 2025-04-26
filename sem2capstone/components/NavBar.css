@@ -1,5 +1,49 @@
-*{
-    margin : 0;
-    padding : 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 15px 7%;
+}
+
+.logo {
+    width: 40px;
+    cursor: pointer;
+}
+
+ul {
+    flex: 1;
+    list-style: none;
+    text-align: center;
+    margin-left: 50px;
+}
+
+ul li {
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    color: black;
+}
+
+
+ul li:hover {
+    color: #4318D1;
+}
+
+.login, .SignUp {
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 113.34px;
+    height: 55.29px;
+    color: #ffffff;
+    background-color: #4318D1;
+    border-radius: 50px;
+}
+
+.login:hover, .SignUp:hover {
+    background-color: #3a14b1;  
+}
