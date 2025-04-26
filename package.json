@@ -4,7 +4,10 @@
   "description": "This is my sem2 capstone project on a charity website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
   },
   "repository": {
     "type": "git",
