@@ -1,22 +1,40 @@
-import React from 'react'
-import "./NavBar.css"
-import logo from "../assets/Charity Logo.png"
+'use client'
+import React, { useState } from "react";
+import "./NavBar.css";
+
 function NavBar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className="navbar">
-    <img src = "https://www.shutterstock.com/image-vector/shake-hands-love-icon-vector-600nw-2475810585.jpg" alt ="" className="logo" height ="40px" />
-    <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Blog</li>
-    </ul>
-    <button className = "login">
-        Login
-    </button>
-    <button className="SignUp">Sign Up</button>
+      <div className="charityName">
+        CHARITY NAME
+      </div>
+
+      <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Blog</li>
+        </ul>
+        <div className="auth-buttons">
+          <div className="login">Login</div>
+          <div className="SignUp">Sign Up</div>
         </div>
-  )
+      </div>
+
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+    </div>
+  );
 }
 
-export default NavBar
+export default NavBar;
