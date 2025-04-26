@@ -1,0 +1,22 @@
+{
+  "name": "sem-2-capstone-project",
+  "version": "1.0.0",
+  "description": "This is my sem2 capstone project on a charity website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ka-ori/Sem_2_Capstone.git"
+  },
+  "keywords": [
+    "Capstone"
+  ],
+  "author": "Krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ka-ori/Sem_2_Capstone/issues"
+  },
+  "homepage": "https://github.com/ka-ori/Sem_2_Capstone#readme"
+}
