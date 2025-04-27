@@ -2,14 +2,19 @@ import React from 'react'
 import NavBar from '@/components/NavBar'
 import SearchBar from '@/components/SearchBar'
 import DonationCard from '@/components/DonationCard'
-function page() {
+import FeaturedCauses from '@/components/FeaturedCauses';
+
+
+function Page() {
   return (
-    <div className = "container">
+    <div className = "main-container">
     <NavBar/>
     <SearchBar/>
     <DonationCard/>
+    <FeaturedCauses/>
+
     </div>
   )
 }
 
-export default page
+export default Page

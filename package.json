@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/ka-ori/Sem_2_Capstone#readme",
   "dependencies": {
+    "bootstrap": "^5.3.5",
     "next": "^15.3.1",
     "react": "^19.1.0",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^19.1.0"
   }
 }
