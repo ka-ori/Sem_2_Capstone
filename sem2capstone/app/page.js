@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import SearchBar from "@/components/SearchBar";
 import DonationCard from "@/components/DonationCard";
 import { Causes } from "@/components/Causes";
+import {Benefits} from "@/components/Benefits";
 export default function Page() {
   return (
     <div className="main-container bg-white min-h-screen">
@@ -14,6 +15,7 @@ export default function Page() {
         Featured Causes
       </h1>
       <Causes />
+      <Benefits />
     </div>
   );
 }
