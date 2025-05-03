@@ -45,7 +45,7 @@ export function Causes() {
   ]
 
   return (
-    <div className="  !w-full flex justify-center mt-8">
+    <div className="  !w-full flex justify-center !mt-20">
       <Carousel className="w-full max-w-6xl px-4">
         <CarouselContent className="gap-4">
           {items.map((item, index) => (
