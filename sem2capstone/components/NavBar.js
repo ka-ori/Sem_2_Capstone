@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import "./NavBar.css";
+import Link from "next/link";
 
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,8 +18,8 @@ function NavBar() {
 
       <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
         <ul>
-          <li>Home</li>
-          <li>About</li>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/about">About</Link></li>
           <li>Services</li>
           <li>Blog</li>
         </ul>
