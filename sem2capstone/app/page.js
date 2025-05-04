@@ -6,7 +6,7 @@ import DonationCard from "@/components/DonationCard";
 import { Causes } from "@/components/Causes";
 import {Benefits} from "@/components/Benefits";
 import { Testimonial } from "@/components/UserTestimonials";
-import { Footer } from "@/components/Footer";
+import {Footer}  from "@/components/Footer";
 export default function Page() {
   return (
     <div className="main-container bg-white min-h-screen">
