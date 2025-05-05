@@ -21,7 +21,7 @@ function NavBar() {
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href='/Services'>Services</Link></li>
-          <li>Blog</li>
+          <li><Link href='/Blog'>Blog</Link></li>
         </ul>
         <div className="auth-buttons">
           <div className="login">Login</div>
