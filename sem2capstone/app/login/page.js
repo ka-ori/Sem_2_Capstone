@@ -34,7 +34,7 @@ const LoginFormDemo = () => {
               type="password" 
               className="!pl-4" 
             />
-          </LabelInputContainer>
+              </LabelInputContainer>
 
           <button
             className="group/btn relative block !h-10 !w-full rounded-md bg-gradient-to-br from-violet-700 to-violet-900 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-violet-800 dark:to-violet-950 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"

@@ -11,7 +11,7 @@ export function Causes() {
       id: 1,
       title: "Support Our Mission",
       description: "Help us make a difference in the lives of those in need through your generous contribution.",
-      image : "/images/Cause2.jpg"
+      image : "/images/Charity Hands Diversity Image.avif"
 
     },
     {
@@ -25,21 +25,21 @@ export function Causes() {
       id: 3,
       title: "Education For All",
       description: "Support our initiative to bring quality education to underprivileged children around the world.",
-      image : "/images/Cause2.jpg"
+      image : "/images/Scholarship Programs Image.jpeg"
 
     },
     {
       id: 4,
       title: "Wildlife Conservation",
       description: "Join our efforts to protect endangered species and preserve natural habitats.",
-      image : "/images/Cause2.jpg"
+      image : "/images/Elephant Rescue Image.jpeg"
 
     },
     {
       id: 5,
       title: "Emergency Relief",
       description: "Provide immediate assistance to those affected by natural disasters and humanitarian crises.",
-      image : "/images/Cause2.jpg"
+      image : "/images/Disaster Management.jpg"
 
     },
   ]

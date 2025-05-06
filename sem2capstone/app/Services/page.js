@@ -20,31 +20,31 @@ function page() {
           id: 1,
           title: "Monthly Giving Program",
           description: "Make a lasting impact with recurring monthly donations",
-          image: "/images/Cause2.jpg"
+          image: "/images/Giving Stock Image.jpg"
         },
         {
           id: 2,
           title: "Corporate Partnerships",
           description: "Partner with us to make a difference",
-          image: "/images/Cause2.jpg"
+          image: "/images/Corporate Startup Collaboration.webp"
         },
         {
           id: 3,
           title: "Legacy Giving",
           description: "Leave a lasting legacy of positive change",
-          image: "/images/Cause2.jpg"
+          image: "/images/Legacy Giving Image.jpeg"
         },
         {
           id: 4,
           title: "Wildlife Conservation",
           description: "Join our efforts to protect endangered species and preserve natural habitats.",
-          image: "/images/Cause2.jpg"
+          image: "/images/Elephant Rescue Image.jpeg"
         },
         {
           id: 5,
           title: "Emergency Relief",
           description: "Provide immediate assistance to those affected by natural disasters and humanitarian crises.",
-          image: "/images/Cause2.jpg"
+          image: "/images/Disaster Management.jpg"
         },
     ]
     

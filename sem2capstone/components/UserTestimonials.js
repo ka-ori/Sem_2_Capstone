@@ -7,25 +7,25 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 export function Testimonial() {
   const testimonials = [
     {
-      image: "/images/Profile.jpg",
+      image: "/images/Sarah Hyland.webp",
       quote: "As a foundation partner, we've seen firsthand how effectively they distribute funds.",
       name: "Sarah Mitchell",
       role: "Regular Donor",
     },
     {
-      image: "/images/Profile.jpg",
+      image: "/images/Michael Lee.jpg",
       quote: "As a foundation partner, we've seen firsthand how effectively they distribute funds.",
       name: "Michael Chen",
       role: "Monthly Supporter",
     },
     {
-      image: "/images/Profile.jpg",
+      image: "/images/Emma Watson 2013.jpgg",
       quote: "As a foundation partner, we've seen firsthand how effectively they distribute funds.",
       name: "Emma Thompson",
       role: "Foundation Partner",
     },
     {
-        image: "/images/Profile.jpg",
+        image: "/images/Trump Image.jpeg",
         quote: "As a foundation partner, we've seen firsthand how effectively they distribute funds.",
         name: "Emma Thompson",
         role: "Foundation Partner",

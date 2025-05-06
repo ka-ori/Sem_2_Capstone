@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Footer } from "@/components/Footer";
 
 function page() {
+  const names = [{key:1,image:"/images/Michael Lee.jpg",name:"Michael Lee",position:"Founder and CEO"},{key:2,image:"/images/Sarah Hyland.webp",name:"Sarah Hyland",position:"Vice President"}, {key:3,image:"/images/Emma Watson 2013.jpg",name:"Emma Watt",position:"CTO"}, {key:4,image:"/images/Trump Image.jpeg",name:"Donald Trump",position:"CFO"}]
   return (
     <div className="main-container bg-white min-h-screen">
       <NavBar />
@@ -45,7 +46,7 @@ function page() {
             <ResizablePanel defaultSize={60}>
               <div className="relative flex h-full w-full items-center justify-center">
                 <Image
-                  src="/images/Cause2.jpg"
+                  src="/images/Laughing Kids Photo.jpeg"
                   alt="Person using a mobile device for donations"
                   fill
                   className="object-cover rounded-r-lg"
@@ -64,7 +65,7 @@ function page() {
             <ResizablePanel defaultSize={60}>
               <div className="relative flex h-full w-full items-center justify-center">
                 <Image
-                  src="/images/Cause2.jpg"
+                  src="/images/Europe in a Suitcase UK.jpg"
                   alt="Person using a mobile device for donations"
                   fill
                   className="object-cover rounded-l-lg"
@@ -149,24 +150,28 @@ function page() {
       </div>
 
 
-      <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-12 sm:!mt-30">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center text-black">Our Leadership Team</h1>
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-25 mt-8 sm:!mt-12 w-full">
-          {[1, 2, 3, 4].map((item) => (
-            <div key={item} className="flex flex-col items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
-              <Avatar className="!w-50 !h-50 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <div className="text-center">
-                <h3 className="text-lg sm:text-xl font-semibold">John Doe</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">Founder & CEO</p>
-              </div>
-            </div>
-          ))}
+      <div className="flex flex-col items-center !px-4 sm:px-6 lg:px-8 !mt-12 sm:!mt-30">
+  <h1 className="text-3xl sm:text-4xl font-bold text-center text-black">Our Leadership Team</h1>
+  <div className="flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-25 !mt-8 sm:!mt-12 w-full">
+    {names.map((item) => (
+      <div key={item.key} className="flex flex-col items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+        <div className="!w-50 !h-50 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-gray-200">
+          <Image
+            src={item.image}
+            alt={item.name}
+            width={128}
+            height={128}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <div className="text-center">
+          <h3 className="text-lg sm:text-xl font-semibold">{item.name}</h3>
+          <p className="text-muted-foreground text-sm sm:text-base">{item.position}</p>
         </div>
       </div>
-
+    ))}
+  </div>
+</div>
       <Footer />
     </div>
   );

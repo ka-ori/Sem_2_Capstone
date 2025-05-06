@@ -21,7 +21,7 @@ export function Benefits() {
             <div className="relative flex h-full w-full items-center justify-center">
 
               <Image
-                src="/images/Cause2.jpg"
+                src="/images/Woman Looking at Phone (1).jpeg"
                 alt="Person using a mobile device for donations"
                 fill
                 className="object-cover rounded-r-lg"
@@ -37,7 +37,7 @@ export function Benefits() {
           <div className="relative flex h-full w-full items-center justify-center">
 
               <Image
-                src="/images/Cause2.jpg"
+                src="/images/Children Laughing Outside House Ayodhya.webp"
                 alt="Person using a mobile device for donations"
                 fill
                 className="object-cover rounded-l-lg"
