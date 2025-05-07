@@ -60,7 +60,7 @@ function page() {
         <div>
           <ResizablePanelGroup
             direction="horizontal"
-            className="min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] w-full rounded-lg border mt-8 sm:mt-12 lg:!mt-30"
+            className="min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] w-full rounded-lg border !mt-8 sm:!mt-12 lg:!mt-30"
           >
             <ResizablePanel defaultSize={60}>
               <div className="relative flex h-full w-full items-center justify-center">
