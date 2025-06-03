@@ -5,4 +5,7 @@ module.exports = withFlowbiteReact({
     domains: ['encrypted-tbn0.gstatic.com'],
   },
   output: 'export',
+  images: {
+    unoptimized: true, // Disable image optimization
+  },
 });
