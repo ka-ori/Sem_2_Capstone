@@ -1,29 +1,90 @@
 "use client"
+import { useState } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 import { IconBrandGithub, IconBrandGoogle } from "@tabler/icons-react"
 
 const LoginFormDemo = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("Login form submitted")
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    })
   }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    setSuccess('')
+
+    try {
+      const response = await fetch('http://localhost:3001/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSuccess('Login successful!')
+        console.log('Login successful:', data)
+        console.log('Token:', data.token)
+        console.log('User:', data.user)
+      } else {
+        setError(data.error || 'Login failed')
+      }
+    } catch (error) {
+      setError('Network error. Please try again.')
+      console.error('Login error:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center !w-full !p-4">
-      <div className="shadow-input mx-auto !w-full !max-w-md rounded-none bg-white !p-4 md:rounded-2xl md:!p-8 dark:bg-black">
-        <h2 className="text-xl font-bold !mb-2 text-neutral-800 dark:text-neutral-200">Welcome Back</h2>
-        <p className="!mt-2 !max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-            We’re glad to see you again. Please log in to continue.
+    <div className="!flex !min-h-screen !items-center !justify-center !w-full !p-4">
+      <div className="!shadow-input !mx-auto !w-full !max-w-md !rounded-none !bg-white !p-4 md:!rounded-2xl md:!p-8 dark:!bg-black">
+        <h2 className="!text-xl !font-bold !mb-2 !text-neutral-800 dark:!text-neutral-200">Welcome Back</h2>
+        <p className="!mt-2 !max-w-sm !text-sm !text-neutral-600 dark:!text-neutral-300">
+            We're glad to see you again. Please log in to continue.
         </p>
-        <form className="!my-8" onSubmit={handleSubmit}>
+        
+        {error && (
+          <div className="!mt-4 !p-3 !bg-red-100 !border !border-red-400 !text-red-700 !rounded">
+            {error}
+          </div>
+        )}
+        
+        {success && (
+          <div className="!mt-4 !p-3 !bg-green-100 !border !border-green-400 !text-green-700 !rounded">
+            {success}
+          </div>
+        )}
+
+        <div className="!my-8">
           <LabelInputContainer className="!mb-4">
             <Label htmlFor="email">Email Address</Label>
             <Input 
               id="email" 
               placeholder="projectmayhem@fc.com" 
               type="email" 
-              className="!pl-4" 
+              className="!pl-4"
+              value={formData.email}
+              onChange={handleChange}
+              required
             />
           </LabelInputContainer>
           <LabelInputContainer className="!mb-8">
@@ -32,54 +93,58 @@ const LoginFormDemo = () => {
               id="password" 
               placeholder="••••••••" 
               type="password" 
-              className="!pl-4" 
+              className="!pl-4"
+              value={formData.password}
+              onChange={handleChange}
+              required
             />
-              </LabelInputContainer>
+          </LabelInputContainer>
 
           <button
-            className="group/btn relative block !h-10 !w-full rounded-md bg-gradient-to-br from-violet-700 to-violet-900 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-violet-800 dark:to-violet-950 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
-            type="submit"
+            className="!group/btn !relative !block !h-10 !w-full !rounded-md !bg-gradient-to-br !from-violet-700 !to-violet-900 !font-medium !text-white !shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:!bg-zinc-800 dark:!from-violet-800 dark:!to-violet-950 dark:!shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] !disabled:opacity-50"
+            onClick={handleSubmit}
+            disabled={loading}
           >
-            Sign in &rarr;
+            {loading ? 'Signing in...' : 'Sign in'} &rarr;
             <BottomGradient />
           </button>
 
-          <div className="flex justify-between !mt-4 !mb-6">
+          <div className="!flex !justify-between !mt-4 !mb-6">
             <a
               href="#"
-              className="text-sm text-violet-600 hover:text-violet-500 dark:text-violet-400 dark:hover:text-violet-300"
+              className="!text-sm !text-violet-600 hover:!text-violet-500 dark:!text-violet-400 dark:hover:!text-violet-300"
             >
               Forgot password?
             </a>
             <a
               href="/signUp"
-              className="text-sm text-violet-600 hover:text-violet-500 dark:text-violet-400 dark:hover:text-violet-300"
+              className="!text-sm !text-violet-600 hover:!text-violet-500 dark:!text-violet-400 dark:hover:!text-violet-300"
             >
               Create account
             </a>
           </div>
 
-          <div className="!my-8 !h-[1px] !w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+          <div className="!my-8 !h-[1px] !w-full !bg-gradient-to-r !from-transparent !via-neutral-300 !to-transparent dark:!via-neutral-700" />
 
-          <div className="flex flex-col !space-y-4">
+          <div className="!flex !flex-col !space-y-4">
             <button
-              className="group/btn shadow-input relative flex !h-10 !w-full items-center justify-start !space-x-2 rounded-md bg-gray-50 !px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-              type="submit"
+              className="!group/btn !shadow-input !relative !flex !h-10 !w-full !items-center !justify-start !space-x-2 !rounded-md !bg-gray-50 !px-4 !font-medium !text-black dark:!bg-zinc-900 dark:!shadow-[0px_0px_1px_1px_#262626]"
+              type="button"
             >
-              <IconBrandGithub className="!h-4 !w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">Continue with GitHub</span>
+              <IconBrandGithub className="!h-4 !w-4 !text-neutral-800 dark:!text-neutral-300" />
+              <span className="!text-sm !text-neutral-700 dark:!text-neutral-300">Continue with GitHub</span>
               <BottomGradient />
             </button>
             <button
-              className="group/btn shadow-input relative flex !h-10 !w-full items-center justify-start !space-x-2 rounded-md bg-gray-50 !px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-              type="submit"
+              className="!group/btn !shadow-input !relative !flex !h-10 !w-full !items-center !justify-start !space-x-2 !rounded-md !bg-gray-50 !px-4 !font-medium !text-black dark:!bg-zinc-900 dark:!shadow-[0px_0px_1px_1px_#262626]"
+              type="button"
             >
-              <IconBrandGoogle className="!h-4 !w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-sm text-neutral-700 dark:text-neutral-300">Continue with Google</span>
+              <IconBrandGoogle className="!h-4 !w-4 !text-neutral-800 dark:!text-neutral-300" />
+              <span className="!text-sm !text-neutral-700 dark:!text-neutral-300">Continue with Google</span>
               <BottomGradient />
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   )
@@ -88,14 +153,14 @@ const LoginFormDemo = () => {
 const BottomGradient = () => {
   return (
     <>
-      <span className="absolute inset-x-0 -bottom-px block !h-px !w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-      <span className="absolute inset-x-10 -bottom-px mx-auto block !h-px !w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+      <span className="!absolute !inset-x-0 !-bottom-px !block !h-px !w-full !bg-gradient-to-r !from-transparent !via-violet-500 !to-transparent !opacity-0 !transition !duration-500 group-hover/btn:!opacity-100" />
+      <span className="!absolute !inset-x-10 !-bottom-px !mx-auto !block !h-px !w-1/2 !bg-gradient-to-r !from-transparent !via-violet-500 !to-transparent !opacity-0 !blur-sm !transition !duration-500 group-hover/btn:!opacity-100" />
     </>
   )
 }
 
 const LabelInputContainer = ({ children, className }) => {
-  return <div className={cn("flex !w-full flex-col !space-y-2", className)}>{children}</div>
+  return <div className={cn("!flex !w-full !flex-col !space-y-2", className)}>{children}</div>
 }
 
 export default LoginFormDemo
