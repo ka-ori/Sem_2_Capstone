@@ -1,6 +1,5 @@
 "use client"
 import DonationBanner from "@/components/DonationBanner";
-import NavBar from "@/components/NavBar";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -8,19 +7,18 @@ import {
 } from "@/components/ui/resizable";
 import Image from "next/image";
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Footer } from "@/components/Footer";
 
 function page() {
   const names = [{key:1,image:"/images/Michael Lee.jpg",name:"Michael Lee",position:"Founder and CEO"},{key:2,image:"/images/Sarah Hyland.webp",name:"Sarah Hyland",position:"Vice President"}, {key:3,image:"/images/Emma Watson 2013.jpg",name:"Emma Watt",position:"CTO"}, {key:4,image:"/images/Trump Image.jpeg",name:"Donald Trump",position:"CFO"}]
+  
   return (
     <div className="main-container bg-white min-h-screen">
-      <NavBar />
+
       <DonationBanner />
       
-
       <div className="space-y-8 px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
+        <div id="mission" className="mb-8 !scroll-mt-24">
           <ResizablePanelGroup
             direction="horizontal"
             className="min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] w-full rounded-lg border mt-8 sm:mt-12 lg:!mt-30"
@@ -56,8 +54,7 @@ function page() {
           </ResizablePanelGroup>
         </div>
 
-
-        <div>
+        <div id="impact" className="!scroll-mt-24">
           <ResizablePanelGroup
             direction="horizontal"
             className="min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] w-full rounded-lg border !mt-8 sm:!mt-12 lg:!mt-30"
@@ -113,8 +110,7 @@ function page() {
         </div>
       </div>
 
-
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div id="values" className="px-4 sm:px-6 lg:px-8 !scroll-mt-24">
         <h1 className="text-3xl sm:text-4xl font-bold text-center text-black !mt-12 sm:!mt-30">Our Values</h1>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 lg:gap-20 !mt-8 sm:mt-12 lg:!mt-20">
           <div className="max-w-sm w-full sm:w-auto !p-4 sm:!p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
@@ -149,29 +145,28 @@ function page() {
         </div>
       </div>
 
-
-      <div className="flex flex-col items-center !px-4 sm:px-6 lg:px-8 !mt-12 sm:!mt-30">
-  <h1 className="text-3xl sm:text-4xl font-bold text-center text-black">Our Leadership Team</h1>
-  <div className="flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-25 !mt-8 sm:!mt-12 w-full">
-    {names.map((item) => (
-      <div key={item.key} className="flex flex-col items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
-        <div className="!w-50 !h-50 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-gray-200">
-          <Image
-            src={item.image}
-            alt={item.name}
-            width={128}
-            height={128}
-            className="object-cover w-full h-full"
-          />
-        </div>
-        <div className="text-center">
-          <h3 className="text-lg sm:text-xl font-semibold">{item.name}</h3>
-          <p className="text-muted-foreground text-sm sm:text-base">{item.position}</p>
+      <div id="leadership" className="flex flex-col items-center !px-4 sm:px-6 lg:px-8 !mt-12 sm:!mt-30 !scroll-mt-24">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center text-black">Our Leadership Team</h1>
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-25 !mt-8 sm:!mt-12 w-full">
+            {names.map((item) => (
+            <div key={item.key} className="flex flex-col items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+                <div className="!w-50 !h-50 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-gray-200">
+                <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={128}
+                    height={128}
+                    className="object-cover w-full h-full"
+                />
+                </div>
+                <div className="text-center">
+                <h3 className="text-lg sm:text-xl font-semibold">{item.name}</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">{item.position}</p>
+                </div>
+            </div>
+            ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
       <Footer />
     </div>
   );

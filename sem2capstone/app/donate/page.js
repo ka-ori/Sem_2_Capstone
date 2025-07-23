@@ -1,3 +1,4 @@
+// app/donate/page.js
 'use client'
 import React from 'react'
 import NavBar from "@/components/NavBar";
@@ -50,9 +51,8 @@ function page() {
     
     return (
         <div>
-            <NavBar/>
             <DonationBanner/>
-            <div className="!w-full flex justify-center !mt-20">
+            <div id="giving-options" className="!w-full flex justify-center !mt-20 !scroll-mt-24">
                 <Carousel className="w-full max-w-6xl px-4">
                     <CarouselContent className="gap-4">
                         {items.map((item, index) => (
@@ -87,40 +87,44 @@ function page() {
                     <CarouselNext />
                 </Carousel>
             </div>
-            <h1 className="text-4xl font-bold text-center text-black !mt-30">Frequently Asked Questions</h1>
-            <div className="flex flex-col items-center !mt-30 w-full">
-                <Accordion type="single" collapsible className="w-6/8 !mb-8 border-b border-gray-200 !pb-4">
-                    <AccordionItem value="item-1" >
-                        <AccordionTrigger className="text-2xl text-center text-black">How do I start a monthly donation?</AccordionTrigger>
-                        <AccordionContent className="!mt-4">
-                            You can start a monthly donation by visiting our Donation page and selecting the "Monthly" option. The process takes less than 2 minutes and you can cancel anytime.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-                <Accordion type="single" collapsible className="w-6/8 !mb-8  border-b border-gray-200 !pb-4">
-                    <AccordionItem value="item-2">
-                        <AccordionTrigger className="text-2xl text-center text-black">Can I change my donation amount?</AccordionTrigger>
-                        <AccordionContent className="!mt-4">
-                            Yes, you can modify your donation amount at any time through your account settings or by contacting our support team.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-                <Accordion type="single" collapsible className="w-6/8 !mb-8  border-b border-gray-200 !pb-4">
-                    <AccordionItem value="item-3">
-                        <AccordionTrigger className="text-2xl text-center text-black">Is my donation tax-deductible?</AccordionTrigger>
-                        <AccordionContent className="!mt-4">
-                            All donations to our organization are tax-deductible to the fullest extent allowed by law. You'll receive a receipt for your records.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
-                <Accordion type="single" collapsible className="w-6/8 !mb-8 border-b border-gray-200 !pb-4">
-                    <AccordionItem value="item-4">
-                        <AccordionTrigger className="text-2xl text-center text-black">How do I cancel my recurring donation?</AccordionTrigger>
-                        <AccordionContent className="!mt-4">
-                            You can cancel your recurring donation anytime by logging into your account or contacting our support team. There are no cancellation fees.
-                        </AccordionContent>
-                    </AccordionItem>
-                </Accordion>
+            <div id="faq" className="!scroll-mt-24">
+                <h1 className="text-4xl font-bold text-center text-black !mt-30">Frequently Asked Questions</h1>
+                <div className="flex flex-col items-center !mt-30 w-full px-4">
+                    <div className='w-full max-w-4xl'>
+                        <Accordion type="single" collapsible className="w-full !mb-8 border-b border-gray-200 !pb-4">
+                            <AccordionItem value="item-1" >
+                                <AccordionTrigger className="text-2xl text-center text-black">How do I start a monthly donation?</AccordionTrigger>
+                                <AccordionContent className="!mt-4">
+                                    You can start a monthly donation by visiting our Donation page and selecting the "Monthly" option. The process takes less than 2 minutes and you can cancel anytime.
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                        <Accordion type="single" collapsible className="w-full !mb-8  border-b border-gray-200 !pb-4">
+                            <AccordionItem value="item-2">
+                                <AccordionTrigger className="text-2xl text-center text-black">Can I change my donation amount?</AccordionTrigger>
+                                <AccordionContent className="!mt-4">
+                                    Yes, you can modify your donation amount at any time through your account settings or by contacting our support team.
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                        <Accordion type="single" collapsible className="w-full !mb-8  border-b border-gray-200 !pb-4">
+                            <AccordionItem value="item-3">
+                                <AccordionTrigger className="text-2xl text-center text-black">Is my donation tax-deductible?</AccordionTrigger>
+                                <AccordionContent className="!mt-4">
+                                    All donations to our organization are tax-deductible to the fullest extent allowed by law. You'll receive a receipt for your records.
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                        <Accordion type="single" collapsible className="w-full !mb-8 border-b border-gray-200 !pb-4">
+                            <AccordionItem value="item-4">
+                                <AccordionTrigger className="text-2xl text-center text-black">How do I cancel my recurring donation?</AccordionTrigger>
+                                <AccordionContent className="!mt-4">
+                                    You can cancel your recurring donation anytime by logging into your account or contacting our support team. There are no cancellation fees.
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    </div>
+                </div>
             </div>
             <Footer/>
         </div>

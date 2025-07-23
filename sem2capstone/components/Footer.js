@@ -5,9 +5,9 @@ import Link from "next/link"
 
 export  function Footer(props) {
   const {
-    companyName = "Your Company Name",
+    companyName = "CharityCo",
     contactPhone = "(555) 123-4567",
-    contactEmail = "hello@kindconnect.com",
+    contactEmail = "hello@charityco.com",
     year = new Date().getFullYear(),
   } = props || {}
 
@@ -107,7 +107,7 @@ export  function Footer(props) {
         <div className="!mt-12 text-center">
           <p>
             © {year} {companyName}.
-          </p>
+          </p>  
         </div>
       </div>
     </footer>
