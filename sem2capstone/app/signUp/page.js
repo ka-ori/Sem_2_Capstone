@@ -28,7 +28,7 @@ const SignupFormDemo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validation
+    
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -60,7 +60,7 @@ const SignupFormDemo = () => {
 
       if (response.ok) {
         setSuccess('Account created successfully! Logging you in...');
-        // Automatically log the user in upon successful registration
+        
         login(data.user, data.token);
       } else {
         setError(data.error || 'Signup failed');
@@ -77,7 +77,7 @@ const SignupFormDemo = () => {
     <div className="!min-h-screen !flex !items-center !justify-center !p-4">
       <div className="!shadow-input !w-full !max-w-md !rounded-none !bg-white !p-4 md:!rounded-2xl md:!p-8 dark:!bg-black">
         <h2 className="!text-xl !font-bold !mb-2 !text-neutral-800 dark:!text-neutral-200">
-          Welcome to CharityName
+          Welcome to CharityCo
         </h2>
         <p className="!mt-2 !max-w-sm !text-sm !text-neutral-600 dark:!text-neutral-300">
           Join us in making a difference. Sign up to start your journey with us.
@@ -186,7 +186,7 @@ const SignupFormDemo = () => {
   );
 };
 
-// These helper components remain unchanged
+
 const BottomGradient = () => {
   return (
     <>

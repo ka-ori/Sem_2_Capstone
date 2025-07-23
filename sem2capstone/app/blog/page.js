@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import { Loader2 } from 'lucide-react'
 import DonationBanner from '@/components/DonationBanner'
-import { generateMoreItems } from '@/lib/blogData' // Import from the new file
+import { generateMoreItems } from '@/lib/blogData' 
 
 function Blog() {
   const [activeButton, setActiveButton] = useState("All")
@@ -25,7 +25,7 @@ function Blog() {
   }
 
   const generateItemsForCategory = useCallback((category, startIndex, count) => {
-    const items = generateMoreItems(startIndex, count * 3) // Generate more to have enough for filtering
+    const items = generateMoreItems(startIndex, count * 3) 
     
     if (category === "All") {
       return items.slice(0, count)

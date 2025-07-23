@@ -24,7 +24,7 @@ const LoginFormDemo = () => {
     });
   }; 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent reloading of the page while submitting 
+    e.preventDefault(); 
     setLoading(true);
     setError('');
     setSuccess('');
@@ -134,4 +134,4 @@ const LabelInputContainer = ({ children, className }) => {
 
 
 
-export default LoginFormDemo  
+export default LoginFormDemo

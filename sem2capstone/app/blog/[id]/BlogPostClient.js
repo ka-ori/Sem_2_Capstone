@@ -11,7 +11,7 @@ import { ArrowLeft, Clock, User, Calendar, Share2 } from 'lucide-react';
 
 export default function BlogPostClient({ post }) {
     
-    // Calculate progress percentage
+    
     const progressPercentage = (post.progress.current / post.progress.total) * 100;
 
     return (

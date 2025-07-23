@@ -7,23 +7,23 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret'; // Add to .env in production
+const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret'; 
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
-// Database connection
-// FIX: Use environment variables for the database connection
+
+
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306 // Use 3306 as a default
+  port: process.env.DB_PORT || 3306 
 });
 
-// Connect to database
+
 db.connect((err) => {
   if (err) {
     console.error('Database connection failed:', err);
@@ -32,7 +32,7 @@ db.connect((err) => {
   console.log('Connected to MySQL database');
 });
 
-// Root route
+
 app.get('/', (req, res) => {
   res.json({ 
     message: 'User Authentication API is running!', 
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Test database connection
+
 app.get('/api/test', (req, res) => {
   db.query('SELECT 1 + 1 AS result', (err, results) => {
     if (err) {
@@ -54,12 +54,12 @@ app.get('/api/test', (req, res) => {
   });
 });
 
-// Signup Route
+
 app.post('/api/signup', async (req, res) => {
   try {
     const { firstname, lastname, email, password } = req.body;
     
-    // Validation
+    
     if (!firstname || !lastname || !email || !password) {
       return res.status(400).json({ error: 'All fields are required' });
     }
@@ -68,7 +68,7 @@ app.post('/api/signup', async (req, res) => {
       return res.status(400).json({ error: 'Password must be at least 6 characters long' });
     }
     
-    // Check if user exists
+    
     db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
       if (err) {
         console.error('Database query error:', err);
@@ -80,11 +80,11 @@ app.post('/api/signup', async (req, res) => {
       }
       
       try {
-        // Hash password
+        
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
         
-        // Insert new user
+        
         db.query(
           'INSERT INTO users (firstname, lastname, email, password) VALUES (?, ?, ?, ?)',
           [firstname, lastname, email, hashedPassword],
@@ -111,17 +111,17 @@ app.post('/api/signup', async (req, res) => {
   }
 });
 
-// Login Route
+
 app.post('/api/login', (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Validation
+    
     if (!email || !password) {
       return res.status(400).json({ error: 'Email and password are required' });
     }
 
-    // Check if user exists
+    
     db.query('SELECT * FROM users WHERE email = ?', [email], async (err, results) => {
       if (err) {
         console.error('Database query error:', err);
@@ -134,20 +134,20 @@ app.post('/api/login', (req, res) => {
 
       const user = results[0];
       
-      // Compare passwords
+      
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
         return res.status(401).json({ error: 'Invalid credentials' });
       }
 
-      // Generate JWT token
+      
       const token = jwt.sign(
         { userId: user.id, email: user.email },
         JWT_SECRET,
         { expiresIn: '1h' }
       );
 
-      // Return user data (excluding password)
+      
       const userData = {
         id: user.id,
         firstname: user.firstname,
@@ -167,7 +167,7 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-// Start server
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

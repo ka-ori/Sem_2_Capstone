@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-
-import SearchBar from "@/components/SearchBar";
 import DonationCard from "@/components/DonationCard";
 import { Causes } from "@/components/Causes";
 import {Benefits} from "@/components/Benefits";

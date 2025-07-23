@@ -4,9 +4,9 @@ module.exports = withFlowbiteReact({
   images: {
     domains: [
       'encrypted-tbn0.gstatic.com',
-      'images.unsplash.com' // Add this for the blog images
+      'images.unsplash.com' 
     ],
     unoptimized: true,
   },
-  // Remove the 'output: export' line
+  
 });

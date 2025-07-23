@@ -1,4 +1,4 @@
-// lib/searchData.js
+
 import { generateMoreItems } from './blogData';
 
 const aboutPageData = [
@@ -49,7 +49,7 @@ const donatePageData = [
     }
 ];
 
-// Generate 100 blog posts to make them searchable
+
 const blogPosts = generateMoreItems(0, 100); 
 const blogPageData = blogPosts.map(post => ({
   id: `blog-${post.id}`,

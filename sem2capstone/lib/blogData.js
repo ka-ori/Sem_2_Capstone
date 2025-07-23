@@ -1,4 +1,4 @@
-// lib/blogData.js
+
 
 const categories = ["Impact", "Education", "Health", "Environment"];
 const titles = [
@@ -72,7 +72,7 @@ export const generateMoreItems = (startIndex, count) => {
       
       date: new Date(Date.now() - (index * 17 * 24 * 60 * 60 * 1000)).toISOString(),
      
-      readTime: ((index * 3) % 5) + 3 // Produces a consistent number between 3 and 7
+      readTime: ((index * 3) % 5) + 3 
     };
   });
 };
