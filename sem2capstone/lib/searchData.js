@@ -56,7 +56,7 @@ const blogPageData = blogPosts.map(post => ({
   title: post.title,
   content: post.description + ' ' + post.fullContent.intro + ' ' + post.fullContent.sections.map(s => s.content).join(' '),
   url: `/blog/${post.id}`,
-  page: 'Blog'
+  page: 'blog'
 }));
 
 export const searchData = [...aboutPageData, ...donatePageData, ...blogPageData];

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid"
 import { Loader2 } from 'lucide-react'
-import NavBar from "@/components/NavBar"
 import DonationBanner from '@/components/DonationBanner'
 import { generateMoreItems } from '@/lib/blogData' // Import from the new file
 
